@@ -32,7 +32,7 @@ async def metrics_middleware(request: Request, call_next):
 @app.get("/")
 def root():
     n = r.incr("visites")
-    return {"visites": n}
+    return {"visites": n, "X-Visites-Version": "0.1.0"}
 
 
 @app.get("/health")
